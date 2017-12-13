@@ -1,7 +1,7 @@
 {
   "name": "@vayne/postcss-px2rem",
   "description": "Postcss version of px2rem",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/songsiqi/px2rem-postcss",
   "author": "songsiqi <songsiqi2006@126.com>",
   "repository": {
