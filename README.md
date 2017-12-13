@@ -1,4 +1,28 @@
 # postcss-px2rem
+## fork 过来是为解决 因为webpack压缩时候会把css的注释先去除，然后在loader，导致带注释的编译无效 
+### 现使用自定义的单位的方式标明处理 这里使用大写是因为我 使用的是scss 如果用小写的话  会被转义成px 233  = =并没有找到好的解决的方式就大写了。
+
+>  如果是 直接使用postcss 的请使用（PS 我是看了他来改的） [postcss-plugin-px2rem](https://github.com/ggpp224/postcss-plugin-px2rem)
+
+in
+```css
+.cls {
+  width: 75px;
+  font-size: 12DPX;
+  border: 1RPX;
+}
+```
+
+out
+```css
+.cls {
+  width: 2rem;
+  border: 1px;
+}
+[data-dpr="1"] .cls { font-size: 12px }
+[data-dpr="2"] .cls { font-size: 24px }
+[data-dpr="3"] .cls { font-size: 36px }
+```
 
 This is a [postcss](https://www.npmjs.com/package/postcss) plugin of [px2rem](https://www.npmjs.com/package/px2rem).
 
@@ -12,6 +36,12 @@ This is a [postcss](https://www.npmjs.com/package/postcss) plugin of [px2rem](ht
 [travis-url]: https://travis-ci.org/songsiqi/px2rem-postcss
 [downloads-image]: http://img.shields.io/npm/dm/postcss-px2rem.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/postcss-px2rem
+
+## install 
+```
+yarn add @vayne/postcss-px2rem -D
+npm i @vayne/postcss-px2rem -D
+```
 
 ## Usage
 
